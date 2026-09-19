@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="hero">
+        <div class="overlay"></div>
+
+        <section class="hero-content">
+            <p class="eyebrow">SECURE PORTAL</p>
+            <h1>Harbor Logistics</h1>
+            <p class="subtitle">Welcome to the operations portal.</p>
+
+            <button id="openLogin" class="login-button">
+                <span>Login</span>
+                <span class="arrow">→</span>
+            </button>
+        </section>
+
+        <div id="loginModal" class="modal hidden" aria-hidden="true">
+            <div class="modal-card">
+                <button id="closeLogin" class="close-button" aria-label="Close">×</button>
+
+                <p class="eyebrow">ACCOUNT ACCESS</p>
+                <h2>Login</h2>
+                <p class="modal-subtitle">Enter your portal credentials.</p>
+
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text"
+                           autocomplete="username" placeholder="Enter username" required>
+
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input id="password" name="password" type="password"
+                               autocomplete="current-password" placeholder="Enter password" required>
+                        <button type="button" id="togglePassword" class="show-password">Show</button>
+                    </div>
+
+                    <button id="submitButton" class="submit-button" type="submit">
+                        Sign in
+                    </button>
+
+                    <p id="message" class="message" role="alert"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
